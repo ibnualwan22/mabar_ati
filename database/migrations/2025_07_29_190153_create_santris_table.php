@@ -15,7 +15,7 @@ return new class extends Migration
         $table->id(); // Nomor urut santri
         $table->string('nomor_induk_santri')->unique(); // NIS, harus unik tidak boleh ada yang sama
         $table->string('nama_lengkap');
-        $table->string('kelas');
+        $table->string('kelas')->nullable(); // Kelas santri, bisa diisi atau tidak
         $table->string('asrama');
         $table->text('alamat');
         $table->string('nomor_telepon_wali');

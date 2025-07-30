@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RombonganController;
+use App\Http\Controllers\SantriController; // <-- Tambahkan ini
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,7 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/rombongan/{rombongan}/edit', [RombonganController::class, 'edit'])->name('rombongan.edit');
     Route::put('/rombongan/{rombongan}', [RombonganController::class, 'update'])->name('rombongan.update');
     Route::delete('/rombongan/{rombongan}', [RombonganController::class, 'destroy'])->name('rombongan.destroy'); // <-- TAMBAHKAN INI
-
+    Route::get('/santri', [SantriController::class, 'index'])->name('santri.index');
+    Route::get('/santri/create', [SantriController::class, 'create'])->name('santri.create'); // <-- TAMBAHKAN INI
+    Route::post('/santri', [SantriController::class, 'store'])->name('santri.store');
 
 });
 

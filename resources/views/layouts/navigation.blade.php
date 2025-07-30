@@ -19,8 +19,8 @@
                  {{ __('Kelola Rombongan') }}
                 </x-nav-link>
 
-                <x-nav-link href="#"> {{-- Nanti kita isi href-nya --}}
-                    {{ __('Kelola Santri') }}
+                <x-nav-link :href="route('santri.index')" :active="request()->routeIs('santri.index')">
+                {{ __('Kelola Santri') }}
                 </x-nav-link>
             </div>
         </div>
